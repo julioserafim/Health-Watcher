@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+  <!-- CONFIG RMI -->
+  <servlet>
+	<servlet-name>ServletConfigRMI</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletConfigRMI</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletConfigRMI</servlet-name>
+	<url-pattern>/ServletConfigRMI</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletConfigRMI</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletConfigRMI</url-pattern>
+  </servlet-mapping>
+  
+  <!-- GET DATA FOR SEARCH BY DISEASE TYPE -->
+  <servlet>
+	<servlet-name>ServletGetDataForSearchByDiseaseType</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletGetDataForSearchByDiseaseType</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+	<servlet-name>ServletGetDataForSearchByDiseaseType</servlet-name>
+	<url-pattern>/ServletGetDataForSearchByDiseaseType</url-pattern>
+  </servlet-mapping>  
+
+  <servlet-mapping>
+	<servlet-name>ServletGetDataForSearchByDiseaseType</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletGetDataForSearchByDiseaseType</url-pattern>
+  </servlet-mapping>
+  
+  <!-- GET DATA FOR SEARCH BY HEALTH UNIT -->
+  <servlet>
+	<servlet-name>ServletGetDataForSearchByHealthUnit</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletGetDataForSearchByHealthUnit</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletGetDataForSearchByHealthUnit</servlet-name>
+	<url-pattern>/ServletGetDataForSearchByHealthUnit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletGetDataForSearchByHealthUnit</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletGetDataForSearchByHealthUnit</url-pattern>
+  </servlet-mapping>  
+
+  <!-- GET DATA FOR SEARCH BY SPECIALITY -->
+  <servlet>
+	<servlet-name>ServletGetDataForSearchBySpeciality</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletGetDataForSearchBySpeciality</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletGetDataForSearchBySpeciality</servlet-name>
+	<url-pattern>/ServletGetDataForSearchBySpeciality</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletGetDataForSearchBySpeciality</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletGetDataForSearchBySpeciality</url-pattern>
+  </servlet-mapping>
+
+  <!-- INSERT ANIMAL COMPLAINT -->
+  <servlet>
+	<servlet-name>ServletInsertAnimalComplaint</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletInsertAnimalComplaint</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletInsertAnimalComplaint</servlet-name>
+	<url-pattern>/ServletInsertAnimalComplaint</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletInsertAnimalComplaint</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletInsertAnimalComplaint</url-pattern>
+  </servlet-mapping>
+  
+  <!-- INSERT EMPLOYEE -->
+  <servlet>
+	<servlet-name>ServletInsertEmployee</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletInsertEmployee</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletInsertEmployee</servlet-name>
+	<url-pattern>/ServletInsertEmployee</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletInsertEmployee</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletInsertEmployee</url-pattern>
+  </servlet-mapping>  
+  
+  <!-- INSERT FOOD COMPLAINT -->
+  <servlet>
+	<servlet-name>ServletInsertFoodComplaint</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletInsertFoodComplaint</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletInsertFoodComplaint</servlet-name>
+	<url-pattern>/ServletInsertFoodComplaint</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletInsertFoodComplaint</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletInsertFoodComplaint</url-pattern>
+  </servlet-mapping>
+  
+  <!-- INSERT SPECIAL COMPLAINT -->
+  <servlet>
+	<servlet-name>ServletInsertSpecialComplaint</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletInsertSpecialComplaint</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletInsertSpecialComplaint</servlet-name>
+	<url-pattern>/ServletInsertSpecialComplaint</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletInsertSpecialComplaint</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletInsertSpecialComplaint</url-pattern>
+  </servlet-mapping>
+  
+  <!-- LOGIN -->
+  <servlet>
+    <servlet-name>ServletLogin</servlet-name>
+    <servlet-class>healthwatcher.view.servlets.ServletLogin</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/ServletLogin</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/healthwatcher.view.servlets.ServletLogin</url-pattern>
+  </servlet-mapping>
+  
+  <!-- SEARCH COMPLAINT DATA -->
+  <servlet>
+	<servlet-name>ServletSearchComplaintData</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletSearchComplaintData</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletSearchComplaintData</servlet-name>
+	<url-pattern>/ServletSearchComplaintData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletSearchComplaintData</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletSearchComplaintData</url-pattern>
+  </servlet-mapping>
+  
+  <!-- SEARCH DISEASE DATA -->
+  <servlet>
+	<servlet-name>ServletSearchDiseaseData</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletSearchDiseaseData</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletSearchDiseaseData</servlet-name>
+	<url-pattern>/ServletSearchDiseaseData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletSearchDiseaseData</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletSearchDiseaseData</url-pattern>
+  </servlet-mapping>
+  
+  <!-- SEARCH HEALTH UNITS BY SPECIALITY -->
+  <servlet>
+	<servlet-name>ServletSearchHealthUnitsBySpecialty</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletSearchHealthUnitsBySpecialty</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletSearchHealthUnitsBySpecialty</servlet-name>
+	<url-pattern>/ServletSearchHealthUnitsBySpecialty</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletSearchHealthUnitsBySpecialty</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletSearchHealthUnitsBySpecialty</url-pattern>
+  </servlet-mapping>
+  
+  <!-- SEARCH SPECIALITIES BY HEALTH UNIT -->
+  <servlet>
+	<servlet-name>ServletSearchSpecialtiesByHealthUnit</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletSearchSpecialtiesByHealthUnit</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletSearchSpecialtiesByHealthUnit</servlet-name>
+	<url-pattern>/ServletSearchSpecialtiesByHealthUnit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletSearchSpecialtiesByHealthUnit</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletSearchSpecialtiesByHealthUnit</url-pattern>
+  </servlet-mapping>
+  
+  <!-- UPDATE COMPLAINT DATA -->
+  <servlet>
+	<servlet-name>ServletUpdateComplaintData</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletUpdateComplaintData</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateComplaintData</servlet-name>
+	<url-pattern>/ServletUpdateComplaintData</url-pattern>
+  </servlet-mapping>    
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateComplaintData</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletUpdateComplaintData</url-pattern>
+  </servlet-mapping>
+  
+  <!-- UPDATE COMPLAINT SEARCH -->
+  <servlet>
+	<servlet-name>ServletUpdateComplaintSearch</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletUpdateComplaintSearch</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateComplaintSearch</servlet-name>
+	<url-pattern>/ServletUpdateComplaintSearch</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateComplaintSearch</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletUpdateComplaintSearch</url-pattern>
+  </servlet-mapping>
+  
+  <!-- UPDATE EMPLOYEE DATA -->
+  <servlet>
+	<servlet-name>ServletUpdateEmployeeData</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletUpdateEmployeeData</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateEmployeeData</servlet-name>
+	<url-pattern>/ServletUpdateEmployeeData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateEmployeeData</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletUpdateEmployeeData</url-pattern>
+  </servlet-mapping>
+  
+  <!-- UPDATE EMPLOYEE SEARCH -->
+  <servlet>
+	<servlet-name>ServletUpdateEmployeeSearch</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletUpdateEmployeeSearch</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateEmployeeSearch</servlet-name>
+	<url-pattern>/ServletUpdateEmployeeSearch</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateEmployeeSearch</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletUpdateEmployeeSearch</url-pattern>
+  </servlet-mapping>
+  
+  <!-- UPDATE HEALTH UNIT DATA -->
+  <servlet>
+	<servlet-name>ServletUpdateHealthUnitData</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletUpdateHealthUnitData</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+	<servlet-name>ServletUpdateHealthUnitData</servlet-name>
+	<url-pattern>/ServletUpdateHealthUnitData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateHealthUnitData</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletUpdateHealthUnitData</url-pattern>
+  </servlet-mapping>
+  
+  <!-- UPDATE HEALTH UNIT SEARCH -->
+  <servlet>
+	<servlet-name>ServletUpdateHealthUnitSearch</servlet-name>
+	<servlet-class>healthwatcher.view.servlets.ServletUpdateHealthUnitSearch</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateHealthUnitSearch</servlet-name>
+	<url-pattern>/ServletUpdateHealthUnitSearch</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	<servlet-name>ServletUpdateHealthUnitSearch</servlet-name>
+	<url-pattern>/healthwatcher.view.servlets.ServletUpdateHealthUnitSearch</url-pattern>
+  </servlet-mapping>
+  
+  <!-- WEB SERVER -->
+  <servlet>
+	<servlet-name>ServletWebServer</servlet-name>
+    <servlet-class>healthwatcher.view.servlets.ServletWebServer</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ServletWebServer</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletWebServer</servlet-name>
+    <url-pattern>/ServletWebServer</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+    <servlet-name>ServletWebServer</servlet-name>
+    <url-pattern>/healthwatcher.view.servlets.ServletWebServer</url-pattern>
+  </servlet-mapping>
+  
+  <!-- HW SERVLET -->
+  <servlet>
+	  <servlet-name>HWServlet</servlet-name>
+	  <servlet-class>healthwatcher.view.servlets.HWServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	  <servlet-name>ServletWebServer</servlet-name>
+	  <url-pattern>/HWServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	  <servlet-name>HWServlet</servlet-name>
+	  <url-pattern>/healthwatcher.view.servlets.HWServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- RESOURCES -->
+  <resource-ref>
+    <res-ref-name>jdbc/HealthWatcherPooling</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+  </resource-ref> 
+  
+</web-app>

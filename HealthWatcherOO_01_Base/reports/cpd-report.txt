@@ -1,0 +1,1556 @@
+Found a 20 line (163 tokens) duplication in the following files: 
+Starting at line 80 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertFoodComplaint.java
+Starting at line 73 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertSpecialComplaint.java
+
+            out.println(HTMLCode.htmlPage("Complaint inserted","<p> <h2> Food Complaint inserted</h2> </p>" +"<p> <h2> Save the complaint number: " + codigo + "</h2> </p>")); 
+        } catch(RemoteException e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        } catch (RepositoryException e) {
+            out.println(HTMLCode.errorPage("Problemas com o banco de dados"));
+            e.printStackTrace(out);
+        } catch (TransactionException e) {
+            out.println(HTMLCode.errorPage("Erro no mecanismo de persist?ncia"));
+            e.printStackTrace(out);
+        } catch (ObjectAlreadyInsertedException e) {
+            out.println(HTMLCode.errorPage("Esta queixa jah existe no BD"));
+            e.printStackTrace(out);
+        } catch (ObjectNotValidException e) {
+            out.println(HTMLCode.errorPage("Erro ao inserir esta queixa"));
+            e.printStackTrace(out);
+        } catch (CommunicationException e) {
+            out.println(HTMLCode.errorPage("Erro ao inserir esta queixa"));
+            e.printStackTrace(out);
+        }catch(Exception e){
+=====================================================================
+Found a 21 line (162 tokens) duplication in the following files: 
+Starting at line 56 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchDiseaseData.java
+Starting at line 44 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchHealthUnitsBySpecialty.java
+
+            }
+            out.println(HTMLCode.closeQueries());
+        }catch(RemoteException e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        } catch (ObjectNotFoundException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (RepositoryException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (TransactionException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (CommunicationException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        }catch(Exception e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        } finally {
+            out.close();
+        }
+    }
+}
+=====================================================================
+Found a 22 line (153 tokens) duplication in the following files: 
+Starting at line 27 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertFoodComplaint.java
+Starting at line 28 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertSpecialComplaint.java
+
+public class ServletInsertFoodComplaint extends HWServlet {
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        
+        response.setContentType("text/html");
+
+        try {
+            //Queixa Normal
+            String descricaoQueixa = request.getParameter("descricaoQueixa");
+            String observacaoQueixa = request.getParameter("observacaoQueixa");
+            String nomeSolicitante = request.getParameter("nomeSolicitante");
+            String ruaSolicitante = request.getParameter("ruaSolicitante");
+            String compSolicitante = request.getParameter("compSolicitante");
+            String bairroSolicitante = request.getParameter("bairroSolicitante");
+            String cidadeSolicitante = request.getParameter("cidadeSolicitante");
+            String ufSolicitante = request.getParameter("ufSolicitante");
+            String cepSolicitante = request.getParameter("cepSolicitante ");
+            String telefoneSolicitante = request.getParameter("telefoneSolicitante");
+            Address endSolicitante = new Address(ruaSolicitante, compSolicitante,cepSolicitante,ufSolicitante,
+                                                 telefoneSolicitante,cidadeSolicitante, bairroSolicitante);
+            String emailSolicitante = request.getParameter("emailSolicitante");
+=====================================================================
+Found a 25 line (123 tokens) duplication in the following files: 
+Starting at line 39 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertAnimalComplaint.java
+Starting at line 32 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertFoodComplaint.java
+
+        out = response.getWriter();
+
+        try {
+            String descricaoQueixa = request.getParameter("descricaoQueixa");
+            String observacaoQueixa = request.getParameter("observacaoQueixa");
+            String nomeSolicitante = request.getParameter("nomeSolicitante");
+            String ruaSolicitante = request.getParameter("ruaSolicitante");
+            String compSolicitante = request.getParameter("compSolicitante");
+            String bairroSolicitante = request.getParameter("bairroSolicitante");
+            String cidadeSolicitante = request.getParameter("cidadeSolicitante");
+            String ufSolicitante = request.getParameter("ufSolicitante");
+            String cepSolicitante = request.getParameter("cepSolicitante ");
+            String telefoneSolicitante = request.getParameter("telefoneSolicitante");
+            Address endSolicitante = new Address(ruaSolicitante,
+                                                 compSolicitante,
+                                                 cepSolicitante,
+                                                 ufSolicitante,
+                                                 telefoneSolicitante,
+                                                 cidadeSolicitante,
+                                                 bairroSolicitante);
+            
+            String emailSolicitante = request.getParameter("emailSolicitante");
+
+         
+            String nomeAnimal = request.getParameter("nomeAnimal");
+=====================================================================
+Found a 22 line (122 tokens) duplication in the following files: 
+Starting at line 39 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertAnimalComplaint.java
+Starting at line 33 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertSpecialComplaint.java
+
+        out = response.getWriter();
+
+        try {
+            String descricaoQueixa = request.getParameter("descricaoQueixa");
+            String observacaoQueixa = request.getParameter("observacaoQueixa");
+            String nomeSolicitante = request.getParameter("nomeSolicitante");
+            String ruaSolicitante = request.getParameter("ruaSolicitante");
+            String compSolicitante = request.getParameter("compSolicitante");
+            String bairroSolicitante = request.getParameter("bairroSolicitante");
+            String cidadeSolicitante = request.getParameter("cidadeSolicitante");
+            String ufSolicitante = request.getParameter("ufSolicitante");
+            String cepSolicitante = request.getParameter("cepSolicitante ");
+            String telefoneSolicitante = request.getParameter("telefoneSolicitante");
+            Address endSolicitante = new Address(ruaSolicitante,
+                                                 compSolicitante,
+                                                 cepSolicitante,
+                                                 ufSolicitante,
+                                                 telefoneSolicitante,
+                                                 cidadeSolicitante,
+                                                 bairroSolicitante);
+            
+            String emailSolicitante = request.getParameter("emailSolicitante");
+=====================================================================
+Found a 15 line (103 tokens) duplication in the following files: 
+Starting at line 62 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchDiseaseData.java
+Starting at line 50 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchHealthUnitsBySpecialty.java
+Starting at line 53 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchSpecialtiesByHealthUnit.java
+
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (RepositoryException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (TransactionException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (CommunicationException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        }catch(Exception e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        } finally {
+            out.close();
+        }
+    }
+}
+=====================================================================
+Found a 10 line (102 tokens) duplication in the following files: 
+Starting at line 139 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 198 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+				if (!date.equals("NULL")) {
+					StringTokenizer token = new StringTokenizer(date, "/");
+					int day = (new Integer(token.nextToken())).intValue();
+					int month = (new Integer(token.nextToken())).intValue();
+					int year = (new Integer(token.nextToken())).intValue();
+					d = new java.util.Date(year, month, day);
+				}
+				if (d != null) {
+					try {
+						complaint.setInconvenienceDate(new Date(d.getDate(), d.getMonth() + 1, d
+=====================================================================
+Found a 17 line (97 tokens) duplication in the following files: 
+Starting at line 85 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 134 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+
+				HealthUnit us = search((new Integer(rs.getString("codigo"))).intValue());
+				listaUs.add(us);
+			} else {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+
+			// O resultado da query � navegado, e cada
+			// c�digo � informado � um m�todo (procura) que
+			// monta uma unidade de s�ude a partir do c�digo.
+			while (rs.next()) {
+				HealthUnit us = new HealthUnit();
+				us = search((new Integer(rs.getString("codigo"))).intValue());
+				listaUs.add(us);
+			}
+			rs.close();
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+=====================================================================
+Found a 8 line (92 tokens) duplication in the following files: 
+Starting at line 197 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 214 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+				String date = resultSet.getString("dataParecer");
+				if (!date.equals("NULL")) {
+					StringTokenizer token = new StringTokenizer(date, "/");
+					int day = (new Integer(token.nextToken())).intValue();
+					int month = (new Integer(token.nextToken())).intValue();
+					int year = (new Integer(token.nextToken())).intValue();
+					d = new java.util.Date(year, month, day);
+				}
+=====================================================================
+Found a 18 line (92 tokens) duplication in the following files: 
+Starting at line 67 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertAnimalComplaint.java
+Starting at line 53 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertSpecialComplaint.java
+
+            int anoIncomodo = Integer.parseInt(request.getParameter("anoIncomodo"));
+            String ruaOcorrencia = request.getParameter("ruaOcorrencia");
+            String compOcorrencia = request.getParameter("compOcorrencia");
+            String bairroOcorrencia = request.getParameter("bairroOcorrencia");
+            String cidadeOcorrencia = request.getParameter("cidadeOcorrencia");
+            String ufOcorrencia = request.getParameter("ufOcorrencia");
+            String cepOcorrencia = request.getParameter("cepOcorrencia ");
+            String telefoneOcorrencia = request.getParameter("telefoneOcorrencia");
+            
+            Address endOcorrencia = new Address(ruaOcorrencia,
+                                                compOcorrencia,
+                                                cepOcorrencia,
+                                                ufOcorrencia,
+                                                telefoneOcorrencia,
+                                                cidadeOcorrencia,
+                                                bairroOcorrencia);
+            
+            Calendar agora              = Calendar.getInstance();
+=====================================================================
+Found a 7 line (91 tokens) duplication in the following files: 
+Starting at line 139 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 215 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+				if (!date.equals("NULL")) {
+					StringTokenizer token = new StringTokenizer(date, "/");
+					int day = (new Integer(token.nextToken())).intValue();
+					int month = (new Integer(token.nextToken())).intValue();
+					int year = (new Integer(token.nextToken())).intValue();
+					d = new java.util.Date(year, month, day);
+				}
+=====================================================================
+Found a 10 line (89 tokens) duplication in the following files: 
+Starting at line 100 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+Starting at line 117 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+
+                end = ((FoodComplaint) q).getEnderecoDoente();
+
+                if (end != null) {
+                    out.println("<P>Person sick's address: " + end.getStreet()+ "," + end.getComplement() + " Province: "+ end.getNeighbourhood() + " </P>");
+                    out.println("<P>ZIP code: " + end.getZip() + " City: "+ end.getCity() + " State: " + end.getState()+ "</P>");
+                    out.println("<P> Phone number: " + end.getPhone() + "</P>");
+                }
+            }
+
+            if (q instanceof AnimalComplaint) {
+=====================================================================
+Found a 22 line (88 tokens) duplication in the following files: 
+Starting at line 86 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/DiseaseTypeRepositoryArray.java
+Starting at line 120 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/HealthUnitRepositoryArray.java
+Starting at line 81 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/SymptomRepositoryArray.java
+
+			throw new ObjectNotFoundException("Disease not found");
+		} else {
+			vetor[i] = vetor[indice - 1];
+			indice = indice - 1;
+		}
+	}
+
+	private int getIndex(int code) {
+		int temp;
+		boolean flag = false;
+		int i = 0;
+		while ((!flag) && (i < indice)) {
+			temp = vetor[i].getCode();
+			if (temp == code) {
+				flag = true;
+			} else {
+				i = i + 1;
+			}
+		}
+		return i;
+	}
+}
+=====================================================================
+Found a 21 line (88 tokens) duplication in the following files: 
+Starting at line 226 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 91 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/SpecialityRepositoryRDB.java
+
+				sql += hu.getDescription() + "')";
+				stmt.executeUpdate(sql);
+				stmt.close();
+			} catch (SQLException e) {
+				System.out.println(sql);
+				throw new PersistenceSoftException(e);
+			} catch (PersistenceMechanismException e) {
+				throw new PersistenceSoftException(e);
+			} finally {
+				try {
+					mp.releaseCommunicationChannel();
+				} catch (PersistenceMechanismException e) {
+					throw new PersistenceSoftException(e);
+				}
+			}
+		} else {
+			throw new ObjectNotValidException(ExceptionMessages.EXC_NULO);
+		}
+	}
+
+	public HealthUnit search(int code) throws RepositoryException, ObjectNotFoundException {
+=====================================================================
+Found a 8 line (85 tokens) duplication in the following files: 
+Starting at line 100 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+Starting at line 117 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+Starting at line 131 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+
+                end = ((FoodComplaint) q).getEnderecoDoente();
+
+                if (end != null) {
+                    out.println("<P>Person sick's address: " + end.getStreet()+ "," + end.getComplement() + " Province: "+ end.getNeighbourhood() + " </P>");
+                    out.println("<P>ZIP code: " + end.getZip() + " City: "+ end.getCity() + " State: " + end.getState()+ "</P>");
+                    out.println("<P> Phone number: " + end.getPhone() + "</P>");
+                }
+            }
+=====================================================================
+Found a 17 line (81 tokens) duplication in the following files: 
+Starting at line 596 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 623 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+				sql += complaint.getEnderecoDoente().getCode() + "')";
+			} else {
+				sql += "NULL')";
+			}
+
+			Statement stmt = (Statement) this.mp.getCommunicationChannel();
+			stmt.executeUpdate(sql);
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (SQLException e) {
+			System.out.println(sql);
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		}
+	}
+
+	private void insertAnimal(AnimalComplaint complaint) throws RepositoryException {
+=====================================================================
+Found a 15 line (79 tokens) duplication in the following files: 
+Starting at line 596 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 623 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 650 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+				sql += complaint.getEnderecoDoente().getCode() + "')";
+			} else {
+				sql += "NULL')";
+			}
+
+			Statement stmt = (Statement) this.mp.getCommunicationChannel();
+			stmt.executeUpdate(sql);
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (SQLException e) {
+			System.out.println(sql);
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		}
+	}
+=====================================================================
+Found a 18 line (77 tokens) duplication in the following files: 
+Starting at line 214 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 263 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			lista = specialityRecord.getListaEspecialidade();
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+		return lista;
+	}
+
+	public IteratorDsk getDiseaseTypeList() throws RepositoryException, ObjectNotFoundException,
+=====================================================================
+Found a 10 line (77 tokens) duplication in the following files: 
+Starting at line 65 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByDiseaseType.java
+Starting at line 68 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchBySpeciality.java
+
+        	out.println(HTMLCode.errorPageQueries("There isn't registered diseases"));
+        } catch (RepositoryException e) {
+            out.println("</select></p></center></div>");
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (TransactionException e) {
+            out.println("</select></p></center></div>");
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (CommunicationException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        }finally {
+=====================================================================
+Found a 15 line (76 tokens) duplication in the following files: 
+Starting at line 148 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 170 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			q = this.complaintRecord.search(code);
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+		return q;
+=====================================================================
+Found a 18 line (76 tokens) duplication in the following files: 
+Starting at line 192 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 214 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 263 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			lista = healthUnitRecord.searchHealthUnitsBySpeciality(code);
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+		return lista;
+	}
+
+	public IteratorDsk getSpecialityList() throws RepositoryException, ObjectNotFoundException,
+=====================================================================
+Found a 18 line (76 tokens) duplication in the following files: 
+Starting at line 214 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 236 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 263 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 285 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			lista = specialityRecord.getListaEspecialidade();
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+		return lista;
+	}
+
+	public IteratorDsk getDiseaseTypeList() throws RepositoryException, ObjectNotFoundException,
+=====================================================================
+Found a 18 line (75 tokens) duplication in the following files: 
+Starting at line 192 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 236 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 285 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			lista = healthUnitRecord.searchHealthUnitsBySpeciality(code);
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+		return lista;
+	}
+
+	public IteratorDsk getSpecialityList() throws RepositoryException, ObjectNotFoundException,
+=====================================================================
+Found a 18 line (75 tokens) duplication in the following files: 
+Starting at line 97 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 197 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+
+				listaUs.add(us);
+			}
+			rs.close();
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_PROCURA);
+		} catch (SQLException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_PROCURA);
+		} finally {
+			try {
+				mp.releaseCommunicationChannel();
+			} catch (PersistenceMechanismException e) {
+				throw new PersistenceSoftException(e);
+			}
+		}
+		// O retorno desse m�todo � uma estrutura que permite a
+		// itera��o nos elementos
+		return new ConcreteIterator(listaUs);
+=====================================================================
+Found a 15 line (74 tokens) duplication in the following files: 
+Starting at line 148 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 170 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 192 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			q = this.complaintRecord.search(code);
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+		return q;
+=====================================================================
+Found a 17 line (73 tokens) duplication in the following files: 
+Starting at line 83 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 107 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			healthUnitRecord.update(unit);
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+	}
+
+	public IPersistenceMechanism getPm() {
+=====================================================================
+Found a 15 line (72 tokens) duplication in the following files: 
+Starting at line 148 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 170 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 214 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 236 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 263 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 285 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			q = this.complaintRecord.search(code);
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+		return q;
+=====================================================================
+Found a 13 line (71 tokens) duplication in the following files: 
+Starting at line 108 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/DiseaseTypeRepositoryRDB.java
+Starting at line 167 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/DiseaseTypeRepositoryRDB.java
+
+				codigo = (new Integer(resultSet.getString("codigo"))).intValue();
+				nome = resultSet.getString("nome");
+				descricao = resultSet.getString("descricao");
+				manifestacao = resultSet.getString("manifestacao");
+				duracao = resultSet.getString("duracao");
+
+				//preparar para buscar em outra tabela os sintomas desta doenca
+				//depois vai chamar deepAccess() de SymptomRepositoryArray
+			} else {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+			resultSet.close();
+			stmt.close();
+=====================================================================
+Found a 19 line (70 tokens) duplication in the following files: 
+Starting at line 68 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/DiseaseTypeRepositoryArray.java
+Starting at line 102 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/HealthUnitRepositoryArray.java
+Starting at line 77 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/SpecialityRepositoryArray.java
+Starting at line 63 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/SymptomRepositoryArray.java
+
+			throw new ObjectNotFoundException("Disease not found");
+		} else {
+			response = vetor[i];
+		}
+		return response;
+	}
+
+	public Object next() {
+		if (ponteiro >= indice) {
+			return null;
+		} else {
+			return vetor[ponteiro++];
+		}
+	}
+
+	public void remove(int code) throws RepositoryException, ObjectNotFoundException {
+		int i = getIndex(code);
+		if (i == indice) {
+			throw new ObjectNotFoundException("Disease not found");
+=====================================================================
+Found a 4 line (70 tokens) duplication in the following files: 
+Starting at line 86 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+Starting at line 103 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+Starting at line 120 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+Starting at line 134 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchComplaintData.java
+
+                out.println("<P>Complainer's address: " + end.getStreet()+ "," + end.getComplement() + " Province: "+ end.getNeighbourhood() + " </P>");
+                out.println("<P>ZIP code: " + end.getZip() + " City: "+ end.getCity() + " State: " + end.getState()+ "</P>");
+                out.println("<P> Phone number: " + end.getPhone() + "</P>");
+            }
+=====================================================================
+Found a 16 line (69 tokens) duplication in the following files: 
+Starting at line 99 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 199 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 64 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/SpecialityRepositoryRDB.java
+
+			rs.close();
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_PROCURA);
+		} catch (SQLException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_PROCURA);
+		} finally {
+			try {
+				mp.releaseCommunicationChannel();
+			} catch (PersistenceMechanismException e) {
+				throw new PersistenceSoftException(e);
+			}
+		}
+		// O retorno desse m�todo � uma estrutura que permite a
+		// itera��o nos elementos
+		return new ConcreteIterator(listaUs);
+=====================================================================
+Found a 11 line (66 tokens) duplication in the following files: 
+Starting at line 55 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByDiseaseType.java
+Starting at line 53 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByHealthUnit.java
+
+                repTP.close();
+                
+                out.println("</select></p></center></div>");
+                out.println("<div align=\"center\"><center><p><input type=\"submit\" value=\"Consultar\" name=\"B1\"></p></center></div></form>");
+            }
+            out.println(HTMLCode.closeQueries());            
+        } catch(RemoteException e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        }catch (ObjectNotFoundException e) {
+        	out.println(HTMLCode.errorPageQueries("There isn't registered diseases"));
+=====================================================================
+Found a 9 line (66 tokens) duplication in the following files: 
+Starting at line 65 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByDiseaseType.java
+Starting at line 64 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByHealthUnit.java
+Starting at line 68 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchBySpeciality.java
+
+        	out.println(HTMLCode.errorPageQueries("There isn't registered diseases"));
+        } catch (RepositoryException e) {
+            out.println("</select></p></center></div>");
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (TransactionException e) {
+            out.println("</select></p></center></div>");
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (CommunicationException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+=====================================================================
+Found a 14 line (65 tokens) duplication in the following files: 
+Starting at line 37 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletLogin.java
+Starting at line 30 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateHealthUnitSearch.java
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out;
+        HttpSession session = request.getSession(false);
+        
+        response.setContentType("text/html");
+
+        out = response.getWriter();
+
+        try {
+            if (session == null) {
+                throw new InvalidSessionException("Invalid Session! <br><a href=\""+Constants.SYSTEM_LOGIN+"\">Try again</a>");
+            }            
+                                           
+            out.println(Library.getFileListReplace(keywords, newWords, Constants.FORM_PATH+"MenuEmployee.html"));
+=====================================================================
+Found a 13 line (61 tokens) duplication in the following files: 
+Starting at line 86 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/DiseaseTypeRepositoryArray.java
+Starting at line 120 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/HealthUnitRepositoryArray.java
+Starting at line 95 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/SpecialityRepositoryArray.java
+Starting at line 81 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/SymptomRepositoryArray.java
+
+			throw new ObjectNotFoundException("Disease not found");
+		} else {
+			vetor[i] = vetor[indice - 1];
+			indice = indice - 1;
+		}
+	}
+
+	private int getIndex(int code) {
+		int temp;
+		boolean flag = false;
+		int i = 0;
+		while ((!flag) && (i < indice)) {
+			temp = vetor[i].getCode();
+=====================================================================
+Found a 13 line (61 tokens) duplication in the following files: 
+Starting at line 39 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+Starting at line 104 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+
+			Statement stmt = (Statement) this.pm.getCommunicationChannel();
+			stmt.executeUpdate(sql);
+			stmt.close();
+
+		} catch (PersistenceMechanismException e) {
+			throw new PersistenceSoftException(e);
+		} catch (SQLException e) {
+			System.out.println(sql);
+			throw new PersistenceSoftException(e);
+		}
+	}
+
+	public Employee search(String login) throws ObjectNotFoundException {
+=====================================================================
+Found a 15 line (60 tokens) duplication in the following files: 
+Starting at line 49 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/ComplaintRepositoryArray.java
+Starting at line 102 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/mem/SpecialityRepositoryArray.java
+
+		synchronized (this) {
+			int temp;
+			boolean flag = false;
+			int i = 0;
+			while ((!flag) && (i < indice)) {
+				temp = vetor[i].getCodigo();
+				if (temp == code) {
+					flag = true;
+				} else {
+					i = i + 1;
+				}
+			}
+			return i;
+		}
+	}
+=====================================================================
+Found a 12 line (59 tokens) duplication in the following files: 
+Starting at line 128 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 148 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 170 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 192 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			lista = healthUnitRecord.searchSpecialityByHealthUnit(code);
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		}
+=====================================================================
+Found a 11 line (59 tokens) duplication in the following files: 
+Starting at line 294 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 67 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/DiseaseTypeRepositoryRDB.java
+
+			resultSet.close();
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			e.printStackTrace();
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (SQLException e) {
+			System.out.println(sql);
+			e.printStackTrace();
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		}
+		return complaint;
+=====================================================================
+Found a 12 line (57 tokens) duplication in the following files: 
+Starting at line 128 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 214 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 236 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 263 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 285 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			lista = healthUnitRecord.searchSpecialityByHealthUnit(code);
+			getPm().commitTransaction();
+		} catch (RepositoryException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		}
+=====================================================================
+Found a 17 line (57 tokens) duplication in the following files: 
+Starting at line 69 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 117 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+
+	public IteratorDsk getHealthUnitList() throws RepositoryException, ObjectNotFoundException {
+		List listaUs = new ArrayList();
+
+		// Query para selecionar os c�digos de todas unidades de sa�de
+		// existentes no sistema
+		String sql = "SELECT codigo FROM SCBS_unidadesaude";
+		ResultSet rs = null;
+
+		try {
+			Statement stmt = (Statement) this.mp.getCommunicationChannel();
+			rs = stmt.executeQuery(sql);
+
+			// O resultado da query � testado para saber
+			// da exist�ncia de unidades de sa�de cadastradas.
+			// Caso n�o existam uma exce��o � lan�ada.
+			if (rs.next()) {
+				HealthUnit us = search((new Integer(rs.getString("codigo"))).intValue());
+=====================================================================
+Found a 8 line (55 tokens) duplication in the following files: 
+Starting at line 58 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByDiseaseType.java
+Starting at line 45 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchSpecialtiesByHealthUnit.java
+
+                out.println("<div align=\"center\"><center><p><input type=\"submit\" value=\"Consultar\" name=\"B1\"></p></center></div></form>");
+            }
+            out.println(HTMLCode.closeQueries());            
+        } catch(RemoteException e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        }catch (ObjectNotFoundException e) {
+        	out.println(HTMLCode.errorPageQueries("There isn't registered diseases"));
+=====================================================================
+Found a 10 line (54 tokens) duplication in the following files: 
+Starting at line 85 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 124 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/SpecialityRepositoryRDB.java
+
+				complaint.setEnderecoDoente(endDo);
+			} else {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+			resultSet.close();
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			e.printStackTrace();
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (java.sql.SQLException e) {
+=====================================================================
+Found a 11 line (54 tokens) duplication in the following files: 
+Starting at line 86 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 135 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 186 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+
+				listaUs.add(us);
+			} else {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+
+			// O resultado da query � navegado, e cada
+			// c�digo � informado � um m�todo (procura) que
+			// monta uma unidade de s�ude a partir do c�digo.
+			while (rs.next()) {
+				HealthUnit us = new HealthUnit();
+				us = search((new Integer(rs.getString("codigo"))).intValue());
+=====================================================================
+Found a 12 line (53 tokens) duplication in the following files: 
+Starting at line 180 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/AddressRepositoryRDB.java
+Starting at line 290 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+
+				end.setCode(code);
+
+			} else {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+			resultSet.close();
+			stmt.close();
+
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (SQLException e) {
+			System.out.println(sql);
+=====================================================================
+Found a 9 line (53 tokens) duplication in the following files: 
+Starting at line 73 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByHealthUnit.java
+Starting at line 68 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchDiseaseData.java
+Starting at line 56 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchHealthUnitsBySpecialty.java
+Starting at line 59 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchSpecialtiesByHealthUnit.java
+
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch(Exception e){        	
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        } finally {
+        	out.close();
+        }
+    }
+}
+=====================================================================
+Found a 8 line (53 tokens) duplication in the following files: 
+Starting at line 43 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchHealthUnitsBySpecialty.java
+Starting at line 45 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchSpecialtiesByHealthUnit.java
+
+                out.println("<dd><dd>" + us.getDescription());             
+            }
+            out.println(HTMLCode.closeQueries());
+        } catch(RemoteException e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        }catch (ObjectNotFoundException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+=====================================================================
+Found a 11 line (53 tokens) duplication in the following files: 
+Starting at line 64 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateComplaintSearch.java
+Starting at line 63 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateHealthUnitSearch.java
+
+                                tp.getDescricao()      +
+                                " </OPTION>");                    
+                } while (repTP.hasNext());
+                repTP.close();
+                
+                out.println("</select></p></center></div>");
+                out.println("  <div align=\"center\"><center><p><input type=\"submit\" value=\"Search\" name=\"B1\"></p></center></div></form>");
+            }
+            out.println(HTMLCode.closeAdministrator());            
+        } catch (ObjectNotFoundException e) {
+            out.println(HTMLCode.errorPageQueries("There isn't any complaints"));
+=====================================================================
+Found a 10 line (52 tokens) duplication in the following files: 
+Starting at line 161 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/AddressRepositoryRDB.java
+Starting at line 161 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/DiseaseTypeRepositoryRDB.java
+
+			sql = "select * from SCBS_endereco where " + " codigo = '" + code + "'";
+
+			Statement stmt = (Statement) this.mp.getCommunicationChannel();
+
+			//System.out.println(sql);
+			resultSet = stmt.executeQuery(sql);
+
+			if (resultSet.next()) {
+				//long id = resultSet.getLong("ID");
+				code = (new Integer(resultSet.getString("codigo"))).intValue();
+=====================================================================
+Found a 6 line (52 tokens) duplication in the following files: 
+Starting at line 59 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByHealthUnit.java
+Starting at line 63 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchBySpeciality.java
+
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        } catch (ObjectNotFoundException e) {
+            out.println("</select></p></center></div>");
+            out.println("<P> " + e.getMessage() + " </P>");
+            out.println("<P> Nenhuma unidade de saude foi cadastrada</P>");
+=====================================================================
+Found a 11 line (52 tokens) duplication in the following files: 
+Starting at line 37 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletLogin.java
+Starting at line 25 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateEmployeeSearch.java
+Starting at line 30 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateHealthUnitSearch.java
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out;
+        HttpSession session = request.getSession(false);
+        
+        response.setContentType("text/html");
+
+        out = response.getWriter();
+
+        try {
+            if (session == null) {
+                throw new InvalidSessionException("Invalid Session! <br><a href=\""+Constants.SYSTEM_LOGIN+"\">Try again</a>");
+=====================================================================
+Found a 13 line (51 tokens) duplication in the following files: 
+Starting at line 302 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 133 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/SpecialityRepositoryRDB.java
+
+		} catch (SQLException e) {
+			System.out.println(sql);
+			e.printStackTrace();
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} finally {
+			try {
+				mp.releaseCommunicationChannel();
+			} catch (PersistenceMechanismException e) {
+				throw new PersistenceSoftException(e);
+			}
+		}
+
+		return us;
+=====================================================================
+Found a 8 line (51 tokens) duplication in the following files: 
+Starting at line 58 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByDiseaseType.java
+Starting at line 55 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByHealthUnit.java
+Starting at line 43 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchHealthUnitsBySpecialty.java
+Starting at line 45 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchSpecialtiesByHealthUnit.java
+
+                out.println("<div align=\"center\"><center><p><input type=\"submit\" value=\"Consultar\" name=\"B1\"></p></center></div></form>");
+            }
+            out.println(HTMLCode.closeQueries());            
+        } catch(RemoteException e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        }catch (ObjectNotFoundException e) {
+        	out.println(HTMLCode.errorPageQueries("There isn't registered diseases"));
+=====================================================================
+Found a 13 line (51 tokens) duplication in the following files: 
+Starting at line 25 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateEmployeeSearch.java
+Starting at line 90 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateHealthUnitSearch.java
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        PrintWriter out;
+        HttpSession session = request.getSession(false);
+        
+        response.setContentType("text/html");
+
+        out = response.getWriter();
+      
+        try {
+            if (session == null) {
+                throw new InvalidSessionException();
+            }            
+=====================================================================
+Found a 7 line (50 tokens) duplication in the following files: 
+Starting at line 59 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByDiseaseType.java
+Starting at line 56 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByHealthUnit.java
+Starting at line 56 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchDiseaseData.java
+Starting at line 47 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchSpecialtiesByHealthUnit.java
+
+            }
+            out.println(HTMLCode.closeQueries());            
+        } catch(RemoteException e){
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        }catch (ObjectNotFoundException e) {
+        	out.println(HTMLCode.errorPageQueries("There isn't registered diseases"));
+=====================================================================
+Found a 11 line (50 tokens) duplication in the following files: 
+Starting at line 37 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateComplaintSearch.java
+Starting at line 86 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateComplaintSearch.java
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	PrintWriter out = response.getWriter();
+
+    	HttpSession session = request.getSession(false);
+    	response.setContentType("text/html");
+
+        
+        try {
+        	if (session == null) {
+                throw new InvalidSessionException();
+            }
+=====================================================================
+Found a 11 line (49 tokens) duplication in the following files: 
+Starting at line 37 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletLogin.java
+Starting at line 30 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateHealthUnitSearch.java
+Starting at line 90 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletUpdateHealthUnitSearch.java
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out;
+        HttpSession session = request.getSession(false);
+        
+        response.setContentType("text/html");
+
+        out = response.getWriter();
+
+        try {
+            if (session == null) {
+                throw new InvalidSessionException("Invalid Session! <br><a href=\""+Constants.SYSTEM_LOGIN+"\">Try again</a>");
+=====================================================================
+Found a 10 line (48 tokens) duplication in the following files: 
+Starting at line 153 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 175 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 197 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 219 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 241 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 268 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 290 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 353 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+		return q;
+=====================================================================
+Found a 4 line (48 tokens) duplication in the following files: 
+Starting at line 86 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertAnimalComplaint.java
+Starting at line 71 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertFoodComplaint.java
+Starting at line 65 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertSpecialComplaint.java
+
+            queixa = new AnimalComplaint(nomeSolicitante, descricaoQueixa, observacaoQueixa,
+            							 emailSolicitante, null, 1, null,
+            							 new Date(agora.get(Calendar.DAY_OF_MONTH), agora.get(Calendar.MONTH),
+            									  agora.get(Calendar.YEAR)), endSolicitante, qtdeAnimal,
+=====================================================================
+Found a 6 line (48 tokens) duplication in the following files: 
+Starting at line 68 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/lib/util/Date.java
+Starting at line 81 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/lib/util/Date.java
+
+	public Date(String diaStr, String mesStr, String anoStr) throws InvalidDateException {
+		try {
+			this.dia = Integer.parseInt(diaStr);
+			this.mes = Integer.parseInt(mesStr);
+			this.ano = Integer.parseInt(anoStr);
+			this.horario = null;
+=====================================================================
+Found a 9 line (47 tokens) duplication in the following files: 
+Starting at line 88 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 112 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 371 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+=====================================================================
+Found a 11 line (47 tokens) duplication in the following files: 
+Starting at line 290 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 124 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/SpecialityRepositoryRDB.java
+
+				us.setCode((new Integer(resultSet.getString("codigo"))).intValue());
+
+				//preparar para buscar em outra tabela as especialidades desta unidade de saude
+				//depois vai chamar deepAccess() de RepositorioEspecialidadeBDR
+			} else {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+			resultSet.close();
+			stmt.close();
+
+		} catch (PersistenceMechanismException e) {
+=====================================================================
+Found a 8 line (46 tokens) duplication in the following files: 
+Starting at line 86 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 106 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+
+				.searchSpecialitiesByHealthUnit(code);
+		lib.distribution.rmi.IteratorRMITargetAdapter iteratorTA = new lib.distribution.rmi.IteratorRMITargetAdapter(
+				iterator, 3);
+		sa = new lib.distribution.rmi.IteratorRMISourceAdapter(iteratorTA, iterator, 3);
+		return sa;
+	}
+
+	public Complaint searchComplaint(int code) throws RepositoryException, ObjectNotFoundException,
+=====================================================================
+Found a 8 line (46 tokens) duplication in the following files: 
+Starting at line 163 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 188 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+
+		lib.util.LocalIterator iterator = (lib.util.LocalIterator) fCid.getSpecialityList();
+		lib.distribution.rmi.IteratorRMITargetAdapter iteratorTA = new lib.distribution.rmi.IteratorRMITargetAdapter(
+				iterator, 3);
+		sa = new lib.distribution.rmi.IteratorRMISourceAdapter(iteratorTA, iterator, 3);
+		return sa;
+	}
+
+	public IteratorDsk getDiseaseTypeList() throws RepositoryException, ObjectNotFoundException,
+=====================================================================
+Found a 10 line (46 tokens) duplication in the following files: 
+Starting at line 85 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 290 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 124 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/SpecialityRepositoryRDB.java
+
+				complaint.setEnderecoDoente(endDo);
+			} else {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+			resultSet.close();
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			e.printStackTrace();
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (java.sql.SQLException e) {
+=====================================================================
+Found a 6 line (46 tokens) duplication in the following files: 
+Starting at line 497 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 601 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 628 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 654 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+			Statement stmt = (Statement) this.mp.getCommunicationChannel();
+			stmt.executeUpdate(sql);
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (SQLException e) {
+=====================================================================
+Found a 9 line (46 tokens) duplication in the following files: 
+Starting at line 778 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 52 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/DiseaseTypeRepositoryRDB.java
+
+		Complaint complaint = null;
+		try {
+			Statement stmt = (Statement) this.mp.getCommunicationChannel();
+			rs = stmt.executeQuery(sql);
+
+			if (!rs.next()) {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+			do {
+=====================================================================
+Found a 9 line (46 tokens) duplication in the following files: 
+Starting at line 67 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+Starting at line 87 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+
+			resultSet.close();
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			throw new PersistenceSoftException(e);
+		} catch (SQLException e) {
+			System.out.println(sql);
+			throw new PersistenceSoftException(e);
+		}
+		return employee;
+=====================================================================
+Found a 5 line (46 tokens) duplication in the following files: 
+Starting at line 74 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchBySpeciality.java
+Starting at line 66 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchDiseaseData.java
+Starting at line 54 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchHealthUnitsBySpecialty.java
+Starting at line 57 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchSpecialtiesByHealthUnit.java
+
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch (CommunicationException e) {
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch(Exception e) {
+        	out.println("Error!");
+=====================================================================
+Found a 8 line (45 tokens) duplication in the following files: 
+Starting at line 163 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 173 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 188 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 198 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+
+		lib.util.LocalIterator iterator = (lib.util.LocalIterator) fCid.getSpecialityList();
+		lib.distribution.rmi.IteratorRMITargetAdapter iteratorTA = new lib.distribution.rmi.IteratorRMITargetAdapter(
+				iterator, 3);
+		sa = new lib.distribution.rmi.IteratorRMISourceAdapter(iteratorTA, iterator, 3);
+		return sa;
+	}
+
+	public IteratorDsk getDiseaseTypeList() throws RepositoryException, ObjectNotFoundException,
+=====================================================================
+Found a 12 line (45 tokens) duplication in the following files: 
+Starting at line 88 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 112 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 311 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+	}
+
+	public IPersistenceMechanism getPm() {
+=====================================================================
+Found a 11 line (45 tokens) duplication in the following files: 
+Starting at line 180 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/AddressRepositoryRDB.java
+Starting at line 161 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 290 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+
+				end.setCode(code);
+
+			} else {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+			}
+			resultSet.close();
+			stmt.close();
+
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (SQLException e) {
+=====================================================================
+Found a 9 line (45 tokens) duplication in the following files: 
+Starting at line 185 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/AddressRepositoryRDB.java
+Starting at line 602 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 629 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 655 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+			resultSet.close();
+			stmt.close();
+
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (SQLException e) {
+			System.out.println(sql);
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		}
+=====================================================================
+Found a 9 line (45 tokens) duplication in the following files: 
+Starting at line 219 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/DiseaseTypeRepositoryRDB.java
+Starting at line 298 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+
+			td.setCode(code);
+
+		} catch (PersistenceMechanismException e) {
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		} catch (SQLException e) {
+			System.out.println(sql);
+			e.printStackTrace();
+			throw new RepositoryException(ExceptionMessages.EXC_FALHA_BD);
+		}
+=====================================================================
+Found a 8 line (44 tokens) duplication in the following files: 
+Starting at line 86 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 106 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 163 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 173 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 188 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 198 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+
+				.searchSpecialitiesByHealthUnit(code);
+		lib.distribution.rmi.IteratorRMITargetAdapter iteratorTA = new lib.distribution.rmi.IteratorRMITargetAdapter(
+				iterator, 3);
+		sa = new lib.distribution.rmi.IteratorRMISourceAdapter(iteratorTA, iterator, 3);
+		return sa;
+	}
+
+	public Complaint searchComplaint(int code) throws RepositoryException, ObjectNotFoundException,
+=====================================================================
+Found a 10 line (44 tokens) duplication in the following files: 
+Starting at line 526 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 85 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+
+			resultSet = stmt.executeQuery(consulta);
+
+			response = resultSet.next();
+
+			resultSet.close();
+			stmt.close();
+		} catch (PersistenceMechanismException e) {
+			throw new PersistenceSoftException(e);
+		} catch (SQLException e) {
+			System.out.println(consulta);
+=====================================================================
+Found a 5 line (43 tokens) duplication in the following files: 
+Starting at line 82 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 103 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+
+	public IteratorDsk searchSpecialitiesByHealthUnit(int code) throws ObjectNotFoundException,
+			RepositoryException, TransactionException, java.rmi.RemoteException {
+		lib.distribution.rmi.IteratorRMISourceAdapter sa = null;
+		lib.util.LocalIterator iterator = (lib.util.LocalIterator) fCid
+				.searchSpecialitiesByHealthUnit(code);
+=====================================================================
+Found a 9 line (43 tokens) duplication in the following files: 
+Starting at line 153 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 175 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 197 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 219 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 241 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 268 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 290 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 353 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 392 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotFoundException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+=====================================================================
+Found a 9 line (43 tokens) duplication in the following files: 
+Starting at line 306 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 327 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+			employeeRecord.insert(employee);
+			getPm().commitTransaction();
+		} catch (ObjectAlreadyInsertedException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (ObjectNotValidException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+=====================================================================
+Found a 9 line (43 tokens) duplication in the following files: 
+Starting at line 311 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+Starting at line 371 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacadeInit.java
+
+		} catch (ObjectNotValidException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (TransactionException e) {
+			getPm().rollbackTransaction();
+			throw e;
+		} catch (Exception e) {
+			getPm().rollbackTransaction();
+		}
+=====================================================================
+Found a 4 line (41 tokens) duplication in the following files: 
+Starting at line 160 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 170 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 185 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+Starting at line 195 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/business/HealthWatcherFacade.java
+
+	public IteratorDsk getSpecialityList() throws RepositoryException, ObjectNotFoundException,
+			TransactionException, java.rmi.RemoteException {
+		lib.distribution.rmi.IteratorRMISourceAdapter sa = null;
+		lib.util.LocalIterator iterator = (lib.util.LocalIterator) fCid.getSpecialityList();
+=====================================================================
+Found a 8 line (41 tokens) duplication in the following files: 
+Starting at line 52 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/DiseaseTypeRepositoryRDB.java
+Starting at line 50 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/SpecialityRepositoryRDB.java
+
+		ResultSet rs = null;
+
+		try {
+			Statement stmt = (Statement) this.mp.getCommunicationChannel();
+			rs = stmt.executeQuery(sql);
+
+			if (!rs.next()) {
+				throw new ObjectNotFoundException(ExceptionMessages.EXC_FALHA_PROCURA);
+=====================================================================
+Found a 9 line (41 tokens) duplication in the following files: 
+Starting at line 40 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+Starting at line 67 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+Starting at line 87 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+Starting at line 105 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/EmployeeRepositoryRDB.java
+
+			stmt.executeUpdate(sql);
+			stmt.close();
+
+		} catch (PersistenceMechanismException e) {
+			throw new PersistenceSoftException(e);
+		} catch (SQLException e) {
+			System.out.println(sql);
+			throw new PersistenceSoftException(e);
+		}
+=====================================================================
+Found a 11 line (41 tokens) duplication in the following files: 
+Starting at line 26 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByDiseaseType.java
+Starting at line 23 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByHealthUnit.java
+Starting at line 24 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchBySpeciality.java
+
+public class ServletGetDataForSearchByDiseaseType extends HWServlet {
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        PrintWriter out;
+
+        response.setContentType("text/html");
+
+        out = response.getWriter();
+
+        out.println(HTMLCode.open("Queries - Disease information"));
+=====================================================================
+Found a 9 line (40 tokens) duplication in the following files: 
+Starting at line 128 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 274 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+					+ "codigo = '" + codigo + "'";
+
+			Statement stmt = (Statement) this.mp.getCommunicationChannel();
+			resultSet = stmt.executeQuery(sql);
+
+			if (resultSet.next()) {
+				accessComplaint(resultSet, complaint);
+
+				complaint.setAnimalQuantity(resultSet.getShort("qtdeAnimais"));
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 148 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 207 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+Starting at line 226 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/ComplaintRepositoryRDB.java
+
+						complaint.setInconvenienceDate(new Date(d.getDate(), d.getMonth() + 1, d
+								.getYear() + 1900));
+					} catch (InvalidDateException ex) {
+					}
+				} else {
+					complaint.setInconvenienceDate(null);
+=====================================================================
+Found a 14 line (40 tokens) duplication in the following files: 
+Starting at line 52 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 233 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/HealthUnitRepositoryRDB.java
+Starting at line 99 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/data/rdb/SpecialityRepositoryRDB.java
+
+				throw new RepositoryException(ExceptionMessages.EXC_FALHA_ATUALIZACAO);
+			} finally {
+				try {
+					mp.releaseCommunicationChannel();
+				} catch (PersistenceMechanismException e) {
+					throw new PersistenceSoftException(e);
+				}
+			}
+		} else {
+			throw new ObjectNotValidException(ExceptionMessages.EXC_NULO);
+		}
+	}
+
+	public boolean exists(int num) throws RepositoryException {
+=====================================================================
+Found a 9 line (40 tokens) duplication in the following files: 
+Starting at line 73 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletGetDataForSearchByHealthUnit.java
+Starting at line 91 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletInsertSpecialComplaint.java
+Starting at line 68 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchDiseaseData.java
+Starting at line 56 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchHealthUnitsBySpecialty.java
+Starting at line 59 of /home/julioserafim/Documents/Health-Watcher/HealthWatcherOO_01_Base/src/healthwatcher/view/servlets/ServletSearchSpecialtiesByHealthUnit.java
+
+            out.println("<P> " + e.getMessage() + " </P>");
+        } catch(Exception e){        	
+            out.println(lib.util.HTMLCode.errorPage("Comunitation error, please try again later."));
+            e.printStackTrace(out);
+        } finally {
+        	out.close();
+        }
+    }
+}
